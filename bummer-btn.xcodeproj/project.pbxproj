@@ -16,6 +16,8 @@
 		2217E9AE1018CEF0006C6FDA /* Button Up.png in Resources */ = {isa = PBXBuildFile; fileRef = 2217E9AA1018CEF0006C6FDA /* Button Up.png */; };
 		2217E9AF1018CEF0006C6FDA /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2217E9AB1018CEF0006C6FDA /* logo.png */; };
 		2217E9B01018CEF0006C6FDA /* proton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2217E9AC1018CEF0006C6FDA /* proton.png */; };
+		2217E9B21018CF86006C6FDA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2217E9B11018CF86006C6FDA /* AudioToolbox.framework */; };
+		2217E9B61018CF90006C6FDA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2217E9B51018CF90006C6FDA /* MessageUI.framework */; };
 		280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
 		280E754E0DD40C5E005A515E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
 		280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
@@ -37,6 +39,8 @@
 		2217E9AA1018CEF0006C6FDA /* Button Up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button Up.png"; sourceTree = "<group>"; };
 		2217E9AB1018CEF0006C6FDA /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		2217E9AC1018CEF0006C6FDA /* proton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = proton.png; sourceTree = "<group>"; };
+		2217E9B11018CF86006C6FDA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2217E9B51018CF90006C6FDA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
 		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		280E754C0DD40C5E005A515E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
+				2217E9B21018CF86006C6FDA /* AudioToolbox.framework in Frameworks */,
+				2217E9B61018CF90006C6FDA /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +172,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2217E9B51018CF90006C6FDA /* MessageUI.framework */,
+				2217E9B11018CF86006C6FDA /* AudioToolbox.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,

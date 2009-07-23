@@ -8,9 +8,13 @@
 
 #import "FlipsideViewController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
-}
 
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
+	UIButton *bummerButton;
+}
+@property(nonatomic, retain) IBOutlet UIButton *bummerButton;
+
+- (IBAction)playTuba;
 - (IBAction)showInfo;
 
 @end

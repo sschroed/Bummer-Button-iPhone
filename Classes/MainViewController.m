@@ -8,10 +8,11 @@
 
 #import "MainViewController.h"
 #import "MainView.h"
-
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation MainViewController
 
+@synthesize bummerButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -20,29 +21,21 @@
     return self;
 }
 
-
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
- - (void)viewDidLoad {
- [super viewDidLoad];
- }
- */
-
-
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
-
-
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
     
 	[self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)playTuba {
+	SystemSoundID soundID;
+	
+	// find corresponding CAF file
+	NSURL *cafURL = [NSURL fileURLWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"sadTuba.caf"]];
+	NSLog(@"cafURL: %@", cafURL);
+	OSStatus error = AudioServicesCreateSystemSoundID((CFURLRef) cafURL, &soundID);
+	
+	AudioServicesPlaySystemSound (soundID);
+}
 
 - (IBAction)showInfo {    
 	
@@ -55,15 +48,6 @@
 	[controller release];
 }
 
-
-
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -79,6 +63,7 @@
 
 
 - (void)dealloc {
+	[bummerButton release];
     [super dealloc];
 }
 
