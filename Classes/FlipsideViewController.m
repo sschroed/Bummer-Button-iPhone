@@ -13,10 +13,11 @@
 
 @synthesize delegate;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
+	pacDude = (UIImageView*)[[self view] viewWithTag:1];
+	protonMicro = (UIImageView*)[[self view] viewWithTag:2];
+    self.view.backgroundColor = [UIColor whiteColor];      
 }
 
 
@@ -25,14 +26,6 @@
 }
 
 
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
-
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -40,9 +33,25 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    if([touch view] == pacDude)
+	{
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.pacdudegames.com/services.html"]]; 
+	} else if ([touch view] == protonMicro && [MFMailComposeViewController canSendMail]) {
+		MFMailComposeViewController *controller = [[[MFMailComposeViewController alloc] init] autorelease];
+		controller.mailComposeDelegate = self;
+		[controller setToRecipients:[NSArray arrayWithObject:@"samuelschroeder+protonmicro@gmail.com"]];
+		[controller setSubject:@"Bummer Button App"];
+		[controller setMessageBody:@"I love this app!" isHTML:NO];
+		[self presentModalViewController:controller animated:YES];
+	}
+} 
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+	[self becomeFirstResponder];
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 

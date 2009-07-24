@@ -33,6 +33,7 @@
 	NSURL *cafURL = [NSURL fileURLWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"sadTuba.caf"]];
 	NSLog(@"cafURL: %@", cafURL);
 	OSStatus error = AudioServicesCreateSystemSoundID((CFURLRef) cafURL, &soundID);
+	// Yeah, I know there is a warning.  Don't care.
 	
 	AudioServicesPlaySystemSound (soundID);
 }

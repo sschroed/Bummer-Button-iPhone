@@ -18,6 +18,7 @@
 		2217E9B01018CEF0006C6FDA /* proton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2217E9AC1018CEF0006C6FDA /* proton.png */; };
 		2217E9B21018CF86006C6FDA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2217E9B11018CF86006C6FDA /* AudioToolbox.framework */; };
 		2217E9B61018CF90006C6FDA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2217E9B51018CF90006C6FDA /* MessageUI.framework */; };
+		22FFD20710192F80002A8BB9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFD20610192F80002A8BB9 /* icon.png */; };
 		280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
 		280E754E0DD40C5E005A515E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
 		280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
@@ -41,6 +42,7 @@
 		2217E9AC1018CEF0006C6FDA /* proton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = proton.png; sourceTree = "<group>"; };
 		2217E9B11018CF86006C6FDA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2217E9B51018CF90006C6FDA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		22FFD20610192F80002A8BB9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
 		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		280E754C0DD40C5E005A515E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		2217E9A51018CEA0006C6FDA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22FFD20610192F80002A8BB9 /* icon.png */,
 				2217E9A91018CEF0006C6FDA /* Button Down.png */,
 				2217E9AA1018CEF0006C6FDA /* Button Up.png */,
 				2217E9AB1018CEF0006C6FDA /* logo.png */,
@@ -238,6 +241,7 @@
 				2217E9AE1018CEF0006C6FDA /* Button Up.png in Resources */,
 				2217E9AF1018CEF0006C6FDA /* logo.png in Resources */,
 				2217E9B01018CEF0006C6FDA /* proton.png in Resources */,
+				22FFD20710192F80002A8BB9 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,15 +290,42 @@
 			};
 			name = Release;
 		};
-		C01FCF4F08A954540054247B /* Debug */ = {
+		22FFD24F101935F5002A8BB9 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Samuel Schroeder";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EDF540BF-AC10-4B2B-AF3F-079913D38C0B";
+				SDKROOT = iphoneos3.0;
+			};
+			name = Distribution;
+		};
+		22FFD250101935F5002A8BB9 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = bummer_btn_Prefix.pch;
+				INFOPLIST_FILE = "bummer_btn-Info.plist";
+				PRODUCT_NAME = "bummer-btn";
+			};
+			name = Distribution;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Samuel Schroeder";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5FCAAB91-23DA-420E-AB98-E78BFE24CF23";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
@@ -320,6 +351,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				22FFD250101935F5002A8BB9 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -329,6 +361,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				22FFD24F101935F5002A8BB9 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,14 +6,19 @@
 //  Copyright Proton Microsystems, LLC 2009. All rights reserved.
 //
 
+#import <MessageUI/MessageUI.h>
+
 @protocol FlipsideViewControllerDelegate;
 
 
-@interface FlipsideViewController : UIViewController {
+@interface FlipsideViewController : UIViewController <MFMailComposeViewControllerDelegate> {
 	id <FlipsideViewControllerDelegate> delegate;
+	UIImageView *pacDude;
+	UIImageView *protonMicro;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
+
 - (IBAction)done;
 
 @end
